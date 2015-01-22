@@ -1,4 +1,38 @@
-<!--
-Usa este archivo para tu proyecto. No olvides hacer
-la estructura correta y guardar TODO tu CSS en el archivo styles.css
- -->
+<html>
+ <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="shortcut icon" type="image/png" href="images/icon.png"/>
+
+	<title>Get data from an api with Angular</title>
+	<!--Bootstrap Files-->
+	<link rel = "stylesheet" type = "text/css" href="bootstrap/css/bootstrap.min.css">   
+	<!-- CSS File -->
+	<link rel = "stylesheet" type = "text/css" href="css/styles.css">
+	<!--Jquery-->
+	<script src="js/jquery.js"></script>
+	
+ </head>
+ <body>
+	
+	<div class="container" ng-app="App">
+	 <div class="jumbotron">
+	 <div data-ng-controller="Controller">
+	  <ul>
+	   <li ng-repeat="playlist in playlists">
+	    {{response.playlist.payload.master_branch}}
+	   </li>
+	  </ul>
+ 	 </div><!--Controller-->
+ 	 </div>
+	</div><!--Container-->
+	
+	<!--Bootstrap-->
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<!--Angular-->
+	<script src="angular/angular.min.js"></script>
+	<!--Javascript File-->
+	<script src="js/script.js"></script>
+ </body>
+</html>
