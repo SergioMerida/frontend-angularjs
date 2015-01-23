@@ -19,11 +19,27 @@
 	<div class="container" ng-app="App">
 	 <div class="jumbotron">
 	 <div data-ng-controller="Controller">
-	  <ul>
-	   <li ng-repeat="playlist in playlists">
-	    {{response.playlist.payload.master_branch}}
-	   </li>
-	  </ul>
+	  <table class="table table-hover">
+	   <thead>
+	   	<tr>
+	   	 <th>
+	   	  <a href="" ng-click="reverse=false;order('name', false)">Name</a>
+		  <span class="caret" style="cursor: pointer" ng-click="order('-name',false)"></span>
+		 </th>
+	   	 <th><a href="" ng-click="reverse=!reverse;order('duration', reverse)">Duration</a></th>
+	   	 <th>Playcounts</th>
+	   	 <th>Listeners</th>
+	   	</tr>
+	   </thead>
+	   <tbody>
+	    <tr ng-repeat="playlist in playlists">
+	     <td>{{playlist.name}}</td>
+	     <td>{{playlist.duration *1000| date: "mm:ss"}}</td>
+	     <td>{{playlist.playcount}}</td>
+	     <td ><img ng-src="{{playlist.image[0].#text}}"/></td>
+	    </tr>
+	  <tbody>
+	  </table>
  	 </div><!--Controller-->
  	 </div>
 	</div><!--Container-->
